@@ -1,0 +1,413 @@
+/* ====== BASE POSITIONING ====== */
+
+.smallContent {
+  position: absolute;
+  top: 201px;
+  z-index: 1000;
+}
+
+.main-content {
+  width: 100%;
+}
+
+  /* ========== BASE DESIGN ============ */
+
+  body {
+    background-color: #F8F8F8;
+    font-family: 'Rubik', sans-serif;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  #intro {
+    background-color: #172A52;
+    color: #fff;
+    height: 3.5em;
+    width: 100%;
+  }
+  #intro h1 {
+    font-weight: 400;
+    padding-left: 0.5em;
+  }
+
+  .header_logo {
+    width: 150px;
+    margin-right: 0;
+  }
+
+  /* ====== SEARCH AREA ======== */
+
+  .smallContent,
+  #mobileCat,
+  #mobileDist {
+    align-items: center;
+    background-color: white;
+    color: #333;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+  }
+  .smallContent {
+    height: 372px;
+  }
+  
+  .smallContent {
+    display: none;
+  }
+  #mobileDropdown h3 {
+    margin-left: 1em;
+    text-transform: uppercase;
+  }
+
+
+
+  .searchbar {
+    width: 100%;
+  }
+
+  .btn-public {
+    color: black;
+    display: block;
+    z-index: 1000;
+  }
+
+  .subject {
+    display: flex;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 0.5em 0;
+  }
+
+  .subject button {
+    border: 2px solid #172A52;
+    background-color: #172A52;
+    color: #fff;
+    display: inline-block;
+    font-weight: 500;
+    padding: 9px 12px 12px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+    margin-right: 8px;
+    margin-left: 8px;
+    border-radius: 5px;
+    width: 47%;
+  }
+  .subject button:last-child {
+    background-color: #fff;
+    color: #172A52;
+    font-weight: 500;
+  }
+
+  .searchbar input {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #BEBCBC;
+    border-bottom: 1px solid #BEBCBC;
+    caret-color: #F1592A;
+  }
+
+  #searchField {
+    font-size: 16px;
+    height: 36px;
+    padding-left: 15px;
+  }
+
+  .submit {
+    background-color: #fff;
+    border: none;
+    border-left: 1px solid #BEBCBC;
+    border-top: 1px solid #BEBCBC;
+    border-bottom: 1px solid #BEBCBC;;
+    height: 40px;
+    width: 80px;
+  }
+
+  .searchbutton,
+  .searchL {
+    background-color: #F1592A;
+    border: none;
+    border-left: 1px solid #BEBCBC;
+    border-top: 1px solid #BEBCBC;
+    color: #fff;
+    height: 40px;
+    width: 80px;
+  }
+
+/* ========= DROPDOWN DESIGN ========== */
+
+/* Dropdown Menu Design */
+
+.menu {
+  height: 500px;
+}
+
+.categories {
+  position: absolute;
+  
+}
+.mobileSlide {
+  width: 100%;
+}
+.monitorSlide {
+  left: 64%;
+  top: 16%;
+  width: 20%;
+}
+
+.categories:not(#subcategory):not(#subcategoryL) li:first-child {
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.categories li {
+  box-sizing: content-box;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-family: 'Rubik', sans-serif;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 1em;
+  text-align: left;
+  text-transform: uppercase;
+  width: 90%;
+}
+
+.subcats {
+  display: none;
+  translate: -100%;
+}
+
+#menu,
+#menuMobile,
+.buttons {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* Right Arrow in Dropdown Menu Item Design */
+
+#menu ul li:not(:first-child)::after,
+#menuMobile ul li:not(:first-child)::after,
+  #subcategory li:first-child::after,
+  #subcategoryL li:first-child::after {
+    content: "\f105";
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    float: right;
+    width: 1.3em; 
+  }
+
+/* Back Arrows */
+
+.categories:not(#subcategory):not(#subcategoryL) li:first-child::before {
+  content: "\f104";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  float: left;
+  width: 1.3em; 
+}
+
+/* Change color of dropdown links on hover */
+#menuMobile ul li:hover {background-color: #ddd}
+
+/* ======== FLEX =========== */
+body,
+.row,
+#intro,
+#topNav,
+#header,
+.searchbar,
+#mobileCat,
+#mobileDist {
+  display: flex;
+}
+
+body,
+.categories {
+  flex-direction: column;
+}
+
+#topNav,
+#header,
+.row {
+    justify-content: center;
+}
+
+#intro,
+.searchbar {
+  align-items: center;
+}
+
+
+/* ======== TRANSITIONS =========== */
+
+.fa-angle-down{
+  font-size: 1.5em;
+  margin-right: 1em;
+  align-items: center;
+  transform: rotate(0deg);
+  transition: transform 0.5s linear;
+}
+
+.fa-angle-down.open{
+  transform: rotate(180deg);
+  transition: transform 0.5s linear;
+}
+
+
+.header-container {
+  position: relative;
+}
+.main-nav #nav {
+  text-align: center;
+  margin: 0;
+}
+.main-nav #nav > li {
+  display: inline-block;
+  list-style: none;
+  vertical-align: top;
+}
+.main-nav #nav > li ul {
+  display: none;
+  background: blue;
+}
+
+.main-nav #nav > li ul:before {
+  content:"";
+  position:absolute;
+  left: 0;
+  right: 0;
+  background: blue;
+  height: 100%;
+  z-index: -1;
+}
+
+.wrapper {
+  background: red;
+  min-height: 500px;
+}
+
+  /* --------- Content Design ------------ */
+
+  /* Content background */
+  .content { 
+    align-items: center;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+    height: 800px;
+    overflow-y: auto;
+    position: absolute;
+    top: 25%;
+    z-index: -1;
+  }
+
+    /* Content design */
+    .contdes div {
+      background-color: #F1592A;
+      border: solid 3px #172A52; 
+      border-radius: 3px;
+      color: white;
+      float: left;
+      font-family: 'Varela Round', sans-serif;
+      height: 5em;
+      margin: 5px;
+      padding: 20px;
+      text-transform: capitalize;
+      width: 87%;
+    }
+    .contdes {
+      font-size: 1em;
+    }
+
+    /* =========== Media Queries ===========*/
+
+    @media (max-width: 992px) {
+      .searchL,
+      .monitorSlide {
+        display: none;
+      }
+      
+    }
+
+    @media (min-width: 768px) {
+      .contdes div {
+        width: 40%;
+      }
+    }
+
+    @media (min-width: 992px) {
+      #mobileDropdown {
+        display: none;
+      }
+
+      .content {
+        width: 50%;
+      }
+      
+      .contdes div {
+        width: 90%;
+      }
+
+      .subject,
+      .submit,
+      .searchbutton {
+        display: none;
+      }
+
+      .searchbar input {
+        margin-left: 14%;
+        width: 40%;
+      }
+
+      .searchL,
+      .buttons-L,
+      .buttons {
+        float: left;
+      }
+
+
+      .buttons {
+        background-color: #f8f9fa!important;
+        color: #212529!important;
+        padding: .58em 2em;
+        font-size: 1rem;
+        border-left: 1px solid gray;
+        cursor: pointer;
+        display: inline-block;
+    }
+      .buttons a::after {
+        color: #F1592A;
+        content: "\f107";
+        font-family: 'Font Awesome\ 5 Free';
+        font-weight: 900;
+        float: right;
+        width: 1.3em;  
+      }
+
+      #menu ul li {
+        background-color: #f1f1f1;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-sizing: content-box;
+        cursor: pointer;
+        font-size: 0.75rem;
+        font-family: 'Rubik', sans-serif;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 1em;
+        text-align: left;
+        text-transform: uppercase;
+        width: 100%;
+      }
+
+    }

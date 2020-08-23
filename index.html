@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css'>
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+    
+  <title>BizBiz</title>
+</head>
+<body>
+
+    <header id="topNav" class="row">
+        <img class="header_logo" src="images/logo_march2.png">
+        <div class="btn-public">
+            
+        </div>
+    </header>
+    
+    <div id="intro">
+        <h1>Marketplace</h1>
+    </div>
+
+    <div class="search">
+        <div class="subject">
+            <button>
+                Resources
+            </button>
+            <button>
+                Requests
+            </button>
+        </div>
+        <div class="searchbar">
+            <!-- ================ SEARCH BAR ================= -->
+            <input id="searchField" type="text" placeholder="Type keyword here ..." name="search">
+            <div class="smallDrop">
+                <!-- ========== MOBILE MAIN DROPDOWN BUTTON ============== -->
+                <button  class="submit drop" id="dropdown" onclick="toggleDropdown(event)">
+                    <img class="drop" src="images\filter.png"></img>
+                </button>
+            </div>
+            <!-- ====== DEAD SEARCH BUTTON MOBILE ======= -->
+            <div>
+                <button class="searchbutton" type="">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            <!-- ====== SEARCH BUTTON LARGE MONITOR ======= -->
+            <div class="buttons-L">
+                    <button class="buttons large">
+                        <a>
+                            Distance
+                        </a>
+                    </button>
+                    <button class="buttons large dropdown" onclick="toggleMenu(event)">
+                        <a>
+                            Category
+                        </a>
+                    </button>
+                <button class="searchL" type="">
+                    Search
+                </button>
+            </div>
+            <!-- ============= MOBILE MENU DROPDOWN =================== -->
+            <div id="mobileDropdown" class="smallContent">
+                <div id="mobileCat" class="mobileCat" href="#rotate">
+                    <h3>
+                      category
+                    </h3>
+                  <i class="fas fa-angle-down smallCatArrow" id="rotate"></i> 
+                </div>
+                <div id="menuMobile">
+                    <!-- First Sub Menu -->
+                      <ul id='subcategory' class="categories mobileSlide">
+                          <li onclick="toggleSubMenu(event, this, '#eqpprodmenu', false); 
+                          fading('#eqpprod')">
+                            equipment & product
+                          </li>
+                          <li onclick="toggleSubMenu(event, this, '#expertmenu', false); 
+                          fading('#expertise')">
+                            expertise
+                          </li>
+                          <li onclick="toggleSubMenu(event, this, '#humanmenu', false);
+                          fading('#humanres')">
+                            human resources
+                          </li>
+                          <li onclick="toggleSubMenu(event, this, '#estatemenu', false); 
+                          fading('#realest')">
+                            real estate
+                          </li>
+                      </ul>
+                      <!-- 1 Equipement & Product Menu -->
+                      <ul id="eqpprodmenu" class="categories mobileSlide subcats">
+                            <li onclick="toggleSubMenu(event, this, '#subcategory', true);
+                            fading('#eqpprod', true)">
+                                equipment & product
+                            </li>
+                            <li onclick="toggleSubMenu(event, this, '#electricmenu'); 
+                            fading ('#electronics', false)">
+                                electronics
+                            </li>
+                            <li onclick="toggleSubMenu(event, this, '#eqptools'); 
+                            fading ('#eqpt', false)">
+                                equipment & tools
+                            </li>
+                          <!-- <li onclick="toggleSubMenu(event, this, '#inv'); fading ('#inventory', false)">inventory</li>
+                          <li onclick="displayContent(this)">machinery</li>
+                          <li onclick="displayContent(this)">material handling equipment</li>
+                          <li onclick="displayContent(this)">raw material</li>
+                          <li onclick="displayContent(this)">supplies</li>
+                          <li onclick="displayContent(this)">vehicles</li>
+                          <li onclick="displayContent(this)">other</li> -->
+                      </ul>
+                       <!-- Equipement & Product // Electronics Menu -->
+                    <ul id="electricmenu" class="categories mobileSlide subcats">
+                        <li onclick="toggleSubMenu(event, this, '#eqpprodmenu', true);
+                        fading('#electronics', true)">
+                            electronics
+                        </li>
+                        <li onclick="toggleSubMenu(event, this, '#aircompressmenu'); 
+                        fading ('#aircompressor', false)">
+                            air compressor
+                        </li>
+                        <li onclick="toggleSubMenu(event, this, '#electmotormenu'); 
+                        fading ('#electricmotor', false)">
+                            electric motor
+                        </li>
+                    </ul>
+                    <!-- Equipement & Product // Electronics Menu // Air Compressor Menu -->
+                        <ul id="aircompressmenu" class="categories mobileSlide subcats">
+                        <li onclick="toggleSubMenu(event, this, '#electricmenu', true);fading('#aircompressor', true)">air compressor</li>
+                    </ul>
+                    <!-- Equipement & Product // Electronics Menu // Electric Motor Menu -->
+                    <ul id="electmotormenu" class="categories mobileSlide subcats">
+                        <li onclick="toggleSubMenu(event, this, '#electricmenu', true);fading('#electricmotor', true)">electric motor</li>
+                    </ul>
+                    <!-- Equipement & Product // Equipment & Tools Menu -->
+                    <ul id="eqptools" class="categories mobileSlide subcats">
+                        <li onclick="toggleSubMenu(event, this, '#eqpprodmenu', true); fading('#eqpt', true)">equipment & tools</li>
+                    </ul>
+            <!-- Expertise Menu -->
+                <ul id="expertmenu" class="categories mobileSlide subcats">
+                    <li onclick="toggleSubMenu(event, this, '#subcategory', true);fading('#expertise', true)">expertise</li>
+                    <li onclick="toggleSubMenu(event, this, '#custommenu'); fading ('#customman', false)">custom manufacturing</li>
+                    <!-- <li onclick="displayContent(this)">environmental services</li>
+                    <li onclick="displayContent(this)">industrial processes</li>
+                    <li onclick="displayContent(this)">machine & metalworking</li>
+                    <li onclick="displayContent(this)">maintenance & repair</li>
+                    <li onclick="displayContent(this)">professional services</li>
+                    <li onclick="displayContent(this)">transport & logistics</li>
+                    <li onclick="displayContent(this)">other</li> -->
+                </ul>
+                <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU -->
+                <ul id="custommenu" class="categories mobileSlide subcats">
+                    <li onclick="toggleSubMenu(event, this, '#expertmenu', true);fading('#customman', true)">custom manufacturing</li>
+                    <!-- <li onclick="toggleSubMenu(event, this, '#consultmenu'); fading (this, '#consultation', false)">consultation</li>
+                    <li onclick="toggleSubMenu(event, this, '#lasermenu'); fading (this, '#lasercut', false)">laser cutting</li>
+                    <li onclick="toggleSubMenu(event, this, '#fabricationmenu'); fading (this, '#fabrication', false)">fabrication</li>
+                    <li onclick="toggleSubMenu(event, this, '#chemlabelmenu'); fading (this, '#chemlabel', false)">chemical labeling</li>
+                    <li onclick="toggleSubMenu(event, this, '#textmenu'); fading (this, '#textile', false)">textile</li> -->
+                </ul>
+                    <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU // CONSULTATION MENU -->
+                    <ul id="consultmenu" class="categories mobileSlide subcats">
+                        <li onclick="toggleSubMenu(event, this, '#custommenu', true); fading('#consultation', true)">consultation</li>
+                    </ul>
+                    <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU // LASERCUT MENU -->
+                    <ul id="lasermenu" class="categories mobileSlide subcats">
+                        <li onclick="toggleSubMenu(event, this, '#custommenu', true); fading('#lasercut', true)">laser cutting</li>
+                    </ul>
+                    <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU // FABRICATION MENU -->
+                    <ul id="fabricationmenu" class="categories mobileSlide subcats">
+                        <li onclick="toggleSubMenu(event, this, '#custommenu', true); fading('#fabrication', true)">fabrication</li>
+                    </ul>
+                    <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU // CHEMICAL LABEL MENU -->
+                    <ul id="chemlabelmenu" class="categories mobileSlide subcats">
+                        <li onclick="toggleSubMenu(event, this, '#custommenu', true); fading('#chemlabel', true)">chemical labeling</li>
+                    </ul>
+                    <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU // TEXTILE MENU -->
+                    <ul id="textmenu" class="categories mobileSlide subcats">
+                        <li onclick="toggleSubMenu(event, this, '#custommenu', true); fading('#textile', true)">textile</li>
+                    </ul>
+            <!-- HUMAN RESOURCES MENU -->
+                <ul id="humanmenu" class="categories mobileSlide subcats">
+                    <li onclick="toggleSubMenu(event, this, '#subcategory', true); fading('#humanres', true)">human resources</li>
+                </ul>
+            <!-- REAL ESTATE MENU -->
+                <ul id="estatemenu" class="categories mobileSlide subcats">
+                    <li onclick="toggleSubMenu(event, this, '#subcategory', true); fading('#realest', true)">real estate</li>
+                    <li onclick="toggleSubMenu(event, this, '#facmenu'); fading ('#facility', false)">facility</li>
+                    <li onclick="toggleSubMenu(event, this, '#ofcmenu'); fading ('#offconf', false)">office & conference room</li>
+                    <li onclick="toggleSubMenu(event, this, '#parkmenu'); fading ('#parking', false)">parking space</li>
+                    <li onclick="toggleSubMenu(event, this, '#waremenu'); fading ('#warehouse', false)">warehouse & storage</li>
+                    <!-- <li onclick="displayContent(this)">other</li> -->
+                </ul>
+                <!-- REAL ESTATE MENU // FACILITY -->
+                <ul id="facmenu" class="categories mobileSlide subcats">
+                    <li onclick="toggleSubMenu(event, this, '#estatemenu', true); fading('#facility', true)">facility</li>
+                </ul>
+                <!-- REAL ESTATE MENU // OFFICE& CONFERENCE -->
+                <ul id="ofcmenu" class="categories mobileSlide subcats">
+                    <li onclick="toggleSubMenu(event, this, '#estatemenu', true); fading('#offconf', true)">office & conference room</li>
+                </ul>
+                <!-- REAL ESTATE MENU // PARKING -->
+                <ul id="parkmenu" class="categories mobileSlide subcats">
+                    <li onclick="toggleSubMenu(event, this, '#estatemenu', true); fading('#parking', true)">parking space</li>
+                </ul>
+                <!-- REAL ESTATE MENU // WAREHOUSE -->
+                <ul id="waremenu" class="categories mobileSlide subcats">
+                    <li onclick="toggleSubMenu(event, this, '#estatemenu', true); fading('#warehouse', true)">warehouse & storage</li>
+                </ul>
+                  
+                  </div>
+                  <div id="mobileDist" href="#rotate">
+                    <h3>
+                      distance
+                    </h3>
+                  <i class="fas fa-angle-down smallCatArrow" id="rotate"></i> 
+                </div>
+                
+            </div>
+
+            <!-- DROPDOWN LARGE -->
+
+            <div id="menu">
+                    <!-- First Sub Menu -->
+                      <ul id='subcategoryL' class="categories monitorSlide">
+                          <li onclick="toggleSubMenu(event, this, '#eqpprodmenuL', false); fading('#eqpprod')">equipment & product</li>
+                          <li onclick="toggleSubMenu(event, this, '#expertmenuL', false); fading('#expertise')">expertise</li>
+                          <li onclick="toggleSubMenu(event, this, '#humanmenuL', false);fading('#humanres')">human resources</li>
+                          <li onclick="toggleSubMenu(event, this, '#estatemenuL', false); fading('#realest')">real estate</li>
+                      </ul>
+                  <!-- 1 Equipement & Product Menu -->
+                      <ul id="eqpprodmenuL" class="categories monitorSlide subcats">
+                          <li onclick="toggleSubMenu(event, this, '#subcategoryL', true);fading('#eqpprod', true)">equipment & product</li>
+                          <li onclick="toggleSubMenu(event, this, '#electricmenuL'); fading ('#electronics', false)">electronics</li>
+                          <li onclick="toggleSubMenu(event, this, '#eqptoolsL'); fading ('#eqpt', false)">equipment & tools</li>
+                          <!-- <li onclick="toggleSubMenu(event, this, '#inv'); fading ('#inventory', false)">inventory</li>
+                          <li onclick="displayContent(this)">machinery</li>
+                          <li onclick="displayContent(this)">material handling equipment</li>
+                          <li onclick="displayContent(this)">raw material</li>
+                          <li onclick="displayContent(this)">supplies</li>
+                          <li onclick="displayContent(this)">vehicles</li>
+                          <li onclick="displayContent(this)">other</li> -->
+                      </ul>
+                        <!-- Equipement & Product // Electronics Menu -->
+                          <ul id="electricmenuL" class="categories monitorSlide subcats">
+                            <li onclick="toggleSubMenu(event, this, '#eqpprodmenuL', true);fading('#electronics', true)">electronics</li>
+                            <li onclick="toggleSubMenu(event, this, '#aircompressmenuL'); fading ('#aircompressor', false)">air compressor</li>
+                            <li onclick="toggleSubMenu(event, this, '#electmotormenuL'); fading ('#electricmotor', false)">electric motor</li>
+                        </ul>
+                        <!-- Equipement & Product // Electronics Menu // Air Compressor Menu -->
+                            <ul id="aircompressmenuL" class="categories monitorSlide subcats">
+                              <li onclick="toggleSubMenu(event, this, '#electricmenuL', true);fading('#aircompressor', true)">air compressor</li>
+                          </ul>
+                          <!-- Equipement & Product // Electronics Menu // Electric Motor Menu -->
+                          <ul id="electmotormenuL" class="categories monitorSlide subcats">
+                            <li onclick="toggleSubMenu(event, this, '#electricmenuL', true);fading('#electricmotor', true)">electric motor</li>
+                        </ul>
+                        <!-- Equipement & Product // Equipment & Tools Menu -->
+                          <ul id="eqptoolsL" class="categories monitorSlide subcats">
+                              <li onclick="toggleSubMenu(event, this, '#eqpprodmenuL', true); fading('#eqpt', true)">equipment & tools</li>
+                          </ul>
+                  <!-- Expertise Menu -->
+                      <ul id="expertmenuL" class="categories monitorSlide subcats">
+                          <li onclick="toggleSubMenu(event, this, '#subcategoryL', true);fading('#expertise', true)">expertise</li>
+                          <li onclick="toggleSubMenu(event, this, '#custommenuL'); fading ('#customman', false)">custom manufacturing</li>
+                          <!-- <li onclick="displayContent(this)">environmental services</li>
+                          <li onclick="displayContent(this)">industrial processes</li>
+                          <li onclick="displayContent(this)">machine & metalworking</li>
+                          <li onclick="displayContent(this)">maintenance & repair</li>
+                          <li onclick="displayContent(this)">professional services</li>
+                          <li onclick="displayContent(this)">transport & logistics</li>
+                          <li onclick="displayContent(this)">other</li> -->
+                      </ul>
+                      <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU -->
+                      <ul id="custommenuL" class="categories monitorSlide subcats">
+                        <li onclick="toggleSubMenu(event, this, '#expertmenuL', true);fading('#customman', true)">custom manufacturing</li>
+                        <!-- <li onclick="toggleSubMenu(event, this, '#consultmenu'); fading (this, '#consultation', false)">consultation</li>
+                        <li onclick="toggleSubMenu(event, this, '#lasermenu'); fading (this, '#lasercut', false)">laser cutting</li>
+                        <li onclick="toggleSubMenu(event, this, '#fabricationmenu'); fading (this, '#fabrication', false)">fabrication</li>
+                        <li onclick="toggleSubMenu(event, this, '#chemlabelmenu'); fading (this, '#chemlabel', false)">chemical labeling</li>
+                        <li onclick="toggleSubMenu(event, this, '#textmenu'); fading (this, '#textile', false)">textile</li> -->
+                    </ul>
+                        <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU // CONSULTATION MENU -->
+                        <ul id="consultmenu" class="categories monitorSlide subcats">
+                            <li onclick="toggleSubMenu(event, this, '#custommenuL', true); fading('#consultation', true)">consultation</li>
+                        </ul>
+                        <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU // LASERCUT MENU -->
+                        <ul id="lasermenu" class="categories monitorSlide subcats">
+                            <li onclick="toggleSubMenu(event, this, '#custommenuL', true); fading('#lasercut', true)">laser cutting</li>
+                        </ul>
+                        <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU // FABRICATION MENU -->
+                        <ul id="fabricationmenu" class="categories monitorSlide subcats">
+                            <li onclick="toggleSubMenu(event, this, '#custommenuL', true); fading('#fabrication', true)">fabrication</li>
+                        </ul>
+                        <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU // CHEMICAL LABEL MENU -->
+                        <ul id="chemlabelmenu" class="categories monitorSlide subcats">
+                            <li onclick="toggleSubMenu(event, this, '#custommenuL', true); fading('#chemlabel', true)">chemical labeling</li>
+                        </ul>
+                        <!-- EXPERTISE MENU // CUSTOM MANUFACTURING MENU // TEXTILE MENU -->
+                        <ul id="textmenu" class="categories monitorSlide subcats">
+                            <li onclick="toggleSubMenu(event, this, '#custommenuL', true); fading('#textile', true)">textile</li>
+                        </ul>
+                  <!-- HUMAN RESOURCES MENU -->
+                      <ul id="humanmenuL" class="categories monitorSlide subcats">
+                          <li onclick="toggleSubMenu(event, this, '#subcategoryL', true); fading('#humanres', true)">human resources</li>
+                      </ul>
+                  <!-- REAL ESTATE MENU -->
+                      <ul id="estatemenuL" class="categories monitorSlide subcats">
+                          <li onclick="toggleSubMenu(event, this, '#subcategoryL', true); fading('#realest', true)">real estate</li>
+                          <li onclick="toggleSubMenu(event, this, '#facmenuL'); fading ('#facility', false)">facility</li>
+                          <li onclick="toggleSubMenu(event, this, '#ofcmenuL'); fading ('#offconf', false)">office & conference room</li>
+                          <li onclick="toggleSubMenu(event, this, '#parkmenuL'); fading ('#parking', false)">parking space</li>
+                          <li onclick="toggleSubMenu(event, this, '#waremenuL'); fading ('#warehouse', false)">warehouse & storage</li>
+                          <!-- <li onclick="displayContent(this)">other</li> -->
+                      </ul>
+                      <!-- REAL ESTATE MENU // FACILITY -->
+                      <ul id="facmenuL" class="categories monitorSlide subcats">
+                          <li onclick="toggleSubMenu(event, this, '#estatemenuL', true); fading('#facility', true)">facility</li>
+                      </ul>
+                      <!-- REAL ESTATE MENU // OFFICE& CONFERENCE -->
+                      <ul id="ofcmenuL" class="categories monitorSlide subcats">
+                          <li onclick="toggleSubMenu(event, this, '#estatemenuL', true); fading('#offconf', true)">office & conference room</li>
+                      </ul>
+                      <!-- REAL ESTATE MENU // PARKING -->
+                      <ul id="parkmenuL" class="categories monitorSlide subcats">
+                          <li onclick="toggleSubMenu(event, this, '#estatemenuL', true); fading('#parking', true)">parking space</li>
+                      </ul>
+                      <!-- REAL ESTATE MENU // WAREHOUSE -->
+                      <ul id="waremenuL" class="categories monitorSlide subcats">
+                          <li onclick="toggleSubMenu(event, this, '#estatemenuL', true); fading('#warehouse', true)">warehouse & storage</li>
+                      </ul>
+                  </div>
+            
+        </div>
+
+    </div>
+
+    <div class="content">
+         <!-- Equipment & Product content -->
+      <div id="content-main" >
+            <div class="contents" id="eqpprod">
+              <div id="electronics">
+                  <div class="contdes" id="aircompressor"></div>
+                  <div class="contdes" id="electricmotor"></div>
+              </div>
+              <div class="contdes" id="eqpt"></div>
+            </div>
+  
+          <div class="contents" id="expertise">
+            <div id="customman">
+              <div class="contdes" id="consultation"></div>
+              <div class="contdes" id="lasercut"></div>
+              <div class="contdes" id="fabrication"></div>
+              <div class="contdes" id="chemlabel"></div>
+              <div class="contdes" id="textile"></div>
+            </div>
+          </div>
+  
+          <div class="contents" id="humanres">
+              <div class="contdes"><div>loyal express transport</div></div>
+          </div>
+  
+          <div class="contents" id="realest">
+              <div class="contdes" id="facility"></div>
+              <div class="contdes" id="offconf"></div>
+              <div class="contdes" id="parking"></div>
+              <div class="contdes" id="warehouse"></div>
+          </div>
+  
+  
+      </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        $(document).ready(function() {
+            console.log(show.children.textContent);
+        });
+    </script>
+  
+  
+</body>
+</html>
